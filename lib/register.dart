@@ -60,26 +60,22 @@ class _RegisterPageState extends State<RegisterPage> {
                       }),
                   SizedBox(height: 20),
                   TextFormField(
-                    keyboardType: TextInputType.emailAddress,
-                    controller: email,
-                    decoration: InputDecoration(
-                      labelText: "Email",
-                      hintText: "Enter your email",
-                      border: OutlineInputBorder(),
-                      prefixIcon: Icon(Icons.email),
-                    ),
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return "Email cannot be empty";
-                      }
-                      bool emailValid =
-                          RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$')
-                              .hasMatch(value);
-                      if (!emailValid) {
-                        return "Enter a valid email";
-                      }
-                    },
-                  ),
+                      keyboardType: TextInputType.emailAddress,
+                      controller: email,
+                      decoration: InputDecoration(
+                        labelText: "Email",
+                        hintText: "Enter your email",
+                        border: OutlineInputBorder(),
+                        prefixIcon: Icon(Icons.email),
+                      ),
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return "Email cannot be empty";
+                        } else if (!value.contains('@')) {
+                          return 'Enter a valid email';
+                        }
+                        return null;
+                      }),
                   SizedBox(height: 20),
                   TextFormField(
                     keyboardType: TextInputType.emailAddress,
