@@ -18,7 +18,7 @@ class _splashscreenState extends State<splashscreen> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/background.png'),
+            image: AssetImage('assets/images/startscreen.png'),
             fit: BoxFit.cover,
           ),
         ),
