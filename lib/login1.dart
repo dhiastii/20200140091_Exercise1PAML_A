@@ -3,12 +3,14 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'register.dart';
 import 'package:flutter/material.dart';
 
-class loginpage extends StatefulWidget {
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
   @override
-  State<loginpage> createState() => _loginpageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _loginpageState extends State<loginpage> {
+class _LoginPageState extends State<LoginPage> {
   final _formfield = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passController = TextEditingController();
@@ -40,14 +42,14 @@ class _loginpageState extends State<loginpage> {
                     keyboardType: TextInputType.emailAddress,
                     controller: emailController,
                     decoration: InputDecoration(
-                      labelText: "Username",
-                      hintText: "Enter your username",
+                      labelText: "Name",
+                      hintText: "Enter your name",
                       border: OutlineInputBorder(),
                       prefixIcon: Icon(Icons.person),
                     ),
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return "Username cannot be empty";
+                        return "Please enter your name";
                       }
                     },
                   ),
@@ -74,7 +76,7 @@ class _loginpageState extends State<loginpage> {
                     ),
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return "Password cannot be empty";
+                        return "Please enter your password";
                       } else if (passController.text.length < 6) {
                         return "Password must be at least 6 characters";
                       }
