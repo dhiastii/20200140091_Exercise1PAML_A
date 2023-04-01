@@ -12,9 +12,9 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final _formfield = GlobalKey<FormState>();
-  final emailController = TextEditingController();
-  final passController = TextEditingController();
-  bool passToggle = true;
+  final name = TextEditingController();
+  final password = TextEditingController();
+  bool showpass = true;
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
                   SizedBox(height: 50),
                   TextFormField(
                     keyboardType: TextInputType.emailAddress,
-                    controller: emailController,
+                    controller: name,
                     decoration: InputDecoration(
                       labelText: "Name",
                       hintText: "Enter your name",
@@ -56,8 +56,8 @@ class _LoginPageState extends State<LoginPage> {
                   SizedBox(height: 30),
                   TextFormField(
                     keyboardType: TextInputType.emailAddress,
-                    controller: passController,
-                    obscureText: passToggle,
+                    controller: password,
+                    obscureText: showpass,
                     decoration: InputDecoration(
                       labelText: "Password",
                       hintText: "Enter your Password",
@@ -66,18 +66,17 @@ class _LoginPageState extends State<LoginPage> {
                       suffix: InkWell(
                         onTap: () {
                           setState(() {
-                            passToggle = !passToggle;
+                            showpass = !showpass;
                           });
                         },
-                        child: Icon(passToggle
-                            ? Icons.visibility
-                            : Icons.visibility_off),
+                        child: Icon(
+                            showpass ? Icons.visibility : Icons.visibility_off),
                       ),
                     ),
                     validator: (value) {
                       if (value!.isEmpty) {
                         return "Please enter your password";
-                      } else if (passController.text.length < 6) {
+                      } else if (password.text.length < 6) {
                         return "Password must be at least 6 characters";
                       }
                     },
@@ -88,8 +87,8 @@ class _LoginPageState extends State<LoginPage> {
                       //validation
                       if (_formfield.currentState!.validate()) {
                         print("Success!");
-                        emailController.clear();
-                        passController.clear();
+                        name.clear();
+                        password.clear();
                       }
                     },
                     child: Container(
