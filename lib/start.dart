@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
-class splashscreen extends StatefulWidget {
-  const splashscreen({super.key});
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
 
   @override
-  _splashscreenState createState() => _splashscreenState();
+  _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _splashscreenState extends State<splashscreen> {
+class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +34,7 @@ class _splashscreenState extends State<splashscreen> {
                 onPressed: () {
                   // Add your onPressed function here
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => loginpage()));
+                      MaterialPageRoute(builder: (context) => LoginPage()));
                 },
                 child: Text(
                   'Get Started',
