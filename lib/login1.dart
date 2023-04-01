@@ -96,7 +96,7 @@ class _LoginPageState extends State<LoginPage> {
                       margin: EdgeInsets.symmetric(horizontal: 30.0),
                       height: 50,
                       decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 14, 61, 163),
+                        color: Color.fromARGB(255, 255, 231, 10),
                         borderRadius: BorderRadius.circular(15),
                       ),
                       child: Center(
@@ -128,7 +128,9 @@ class _LoginPageState extends State<LoginPage> {
                         child: Text(
                           "Sign Up",
                           style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold),
+                              color: Color.fromARGB(255, 255, 231, 10),
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold),
                         ),
                       )
                     ],
