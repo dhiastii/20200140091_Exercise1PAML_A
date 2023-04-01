@@ -1,4 +1,4 @@
-import 'package:exepaml1/login.dart';
+import 'package:exepaml1/login1.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -34,7 +34,7 @@ class _splashscreenState extends State<splashscreen> {
                 onPressed: () {
                   // Add your onPressed function here
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => LoginPage()));
+                      MaterialPageRoute(builder: (context) => loginpage()));
                 },
                 child: Text(
                   'Get Started',
